@@ -15,20 +15,20 @@ import sys
 #
 
 def insertionSort1(n, arr):
-    # Write your code here
-    num=arr[len(arr)-1]
-    for i in range(len(arr)-1):
-        if arr[len(arr)-i-2]>num:
-            arr[len(arr)-i-1]=arr[len(arr)-2-i]
+    num = arr[n - 1]
+    for i in range(n - 1):
+        if arr[n - i - 2] > num:
+            arr[n - i - 1] = arr[n - i - 2]
             print(" ".join(map(str, arr)))
-        else :
-             arr[len(arr)-i-1]=num
-             print(" ".join(map(str, arr)))
-        
+        else:
+            arr[n - i - 1] = num
+            print(" ".join(map(str, arr)))
+            break
+    if num < arr[0]:
+        arr[0] = num
+        print(" ".join(map(str, arr)))
 
 if __name__ == '__main__':
     n = int(input().strip())
-
     arr = list(map(int, input().rstrip().split()))
-
     insertionSort1(n, arr)
